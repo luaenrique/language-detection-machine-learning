@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="googleTradutor.css">
+	</head>
+	<body>
+		<div class="text">
+			<div class="group">
+				<select class="selectStyle" id="selectIdiomas">
+					<option val="en">English</option>
+					<option val="fr">Français</option>
+					<option val="pt">Português</option>
+				</select><br>
+				<textarea placeholder="Digitar texto" id="textInput"  class="textInput" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+			</div>
+			<div class="group">
+				<select class="selectStyle">
+					<option>English</option>
+					<option>Français</option>
+					<option>Português</option>
+				</select><br>
+				<textarea placeholder="Eu não traduzo" readonly="true" id="textTranslate" class="textInput" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+			</div>
+
+		</div>
+	</body>
+	<script>
+		$(document).ready(function(){
+			$("#textInput").on('change keyup paste', function() {
+			    var textSize = $(this).val().length;
+
+
+			    if(textSize > 3){
+			    	$.ajax({
+						type: "GET",
+						dataType: "json",
+						url: "http://{YourUSERNAME}.pythonanywhere.com/welcome/default/returnLanguage",
+						data: {
+							text: $(this).val(),
+						},
+						success:function(array){
+							if(array.language == "en"){
+								$("#selectIdiomas").val("English");
+							}else if(array.language == "fr"){
+								$("#selectIdiomas").val("Français");
+							}else{
+								$("#selectIdiomas").val("Português");
+							}
+							
+						},error:function(array){
+							console.log(array);
+						}
+					});
+			    }
+			    if(textSize < 15){
+			    	$(this).css( "font-size", "48px" );
+			    }
+			    else if(textSize <= 30){
+			    	$(this).css( "font-size", "40px" );
+			    }else if(textSize > 30){
+			    	$(this).css( "font-size", "20px" );
+			    }
+			});
+			$("#textTranslate").on('change keyup paste', function() {
+			    var textSize = $(this).val().length;
+			    if(textSize < 15){
+			    	$(this).css( "font-size", "48px" );
+			    }
+			    else if(textSize <= 30){
+			    	$(this).css( "font-size", "40px" );
+			    }else if(textSize > 30){
+			    	$(this).css( "font-size", "20px" );
+			    }
+			});
+			
+			
+		});
+
+	</script>
+</html>
