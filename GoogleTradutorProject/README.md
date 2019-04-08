@@ -6,4 +6,4 @@ That is exactly what I did using my language detection algorithm and creating a 
 You can check the final result below:
 
 
-![gif](https://imgur.com/a/qOVSmSH)
+![gif](https://imgur.com/fa7BLVf)
