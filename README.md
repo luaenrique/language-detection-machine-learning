@@ -27,4 +27,4 @@ When applied to Machine Learning, Naive Bayes Algorithm can be considered a prob
 
 ## Next Steps
 
-I am looking for ways to improve that algorithm the better as possible. I have read about Stemming and Lemmatization and I will probably apply those concepts to a new version of this project.
+I am looking for ways to improve that algorithm as better as possible. I have read about Stemming and Lemmatization and I will probably apply those concepts to a new version of this project.
