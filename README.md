@@ -9,7 +9,7 @@ That was my first Machine Learning project, It was not easy to do. I had to lear
 
 ## Projects created with this algorithm
 
-![My version of Google Tradutor Language Detection.](https://github.com/luaenrique/language-detection-machine-learning/tree/master/GoogleTradutorProject)
+![My version of Google Translate Language Detection.](https://github.com/luaenrique/language-detection-machine-learning/tree/master/GoogleTradutorProject)
 
 
 
